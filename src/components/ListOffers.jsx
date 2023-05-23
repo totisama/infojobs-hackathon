@@ -49,12 +49,12 @@ const ListOffers = () => {
                     <td className='whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0'>
                       <div className='pl-5 flex items-center'>
                         <div className='h-11 w-11 flex-shrink-0'>
-                          <img className='h-11 w-11 rounded-full' src={offer.author.logoUrl} alt='' />
+                          <img className='h-11 w-11 rounded-full' src={offer.logo} alt='' />
                         </div>
                         <div className='ml-4'>
-                          <div className='font-medium text-gray-900'>{offer.author.name}</div>
+                          <div className='font-medium text-gray-900'>{offer.authorName}</div>
                           <div className='mt-1 text-gray-500'>
-                            {offer.province.value !== offer.city ? offer.city + ' - ' + offer.province.value : offer.city}
+                            {offer.province !== offer.city ? offer.city + ' - ' + offer.province : offer.city}
                           </div>
                         </div>
                       </div>
@@ -63,21 +63,21 @@ const ListOffers = () => {
                       <div className='text-gray-900'>{offer.title}</div>
                     </td>
                     <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-500'>
-                      <div className='text-gray-900'>{offer.workDay.value}</div>
+                      <div className='text-gray-900'>{offer.workday}</div>
                       {offer.teleworking
-                        ? <div className='mt-1 text-gray-600'>{offer.teleworking.value}</div>
+                        ? <div className='mt-1 text-gray-600'>{offer.teleworking}</div>
                         : null}
                     </td>
                     <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-900'>
-                      <div className='text-gray-900'>{offer.experienceMin.value}</div>
+                      <div className='text-gray-900'>{offer.experience}</div>
                     </td>
                     <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-900'>
-                      {offer.salaryMin.value
+                      {offer.minSalary
                         ? (
                           <div className=' text-gray-900'>
-                            {offer.salaryMin.value} - {offer.salaryMax.value} {offer.salaryPeriod.value}
+                            {offer.minSalary} - {offer.maxSalary} {offer.salaryPeriod}
                           </div>)
-                        : 'No Especifica'}
+                        : 'No especifica'}
                     </td>
                   </tr>
                 ))}
