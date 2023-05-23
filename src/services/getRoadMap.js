@@ -14,7 +14,7 @@ const openai = new OpenAIApi(configuration)
 const INITIAL_MESSAGES = [
   {
     role: ChatCompletionRequestMessageRoleEnum.System,
-    content: `Te pasare el nombre de un puesto de trabajo y su descripción, una vez te lo pase, dame una lista de cosas que debería de estudiar un usuario y porque debería de estudiarlo. La lista debería de estar en orden de prioridad.
+    content: `Te pasare el nombre de un puesto de trabajo y su descripción, una vez te lo pase, dame una lista de los temas que debería de saber un usuario para poder aplicar al puesto y porque debería de estudiarlo. La lista debería de estar en orden de prioridad.
 
     El formato de solicitud JSON será el siguiente:
     {
