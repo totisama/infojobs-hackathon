@@ -10,6 +10,12 @@ export default defineConfig({
         target: 'https://api.infojobs.net/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
+      },
+      '/oferta/api':
+      {
+        target: 'https://api.infojobs.net/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace('/oferta/api/', '')
       }
     }
   },
