@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react'
 import getListOffers from '../services/getListOffers'
+// import { getRoadMap } from '../services/getRoadMap'
 
 const ListOffers = () => {
   const [offers, setOffers] = useState([])
+
   const getOffers = async () => {
     const offers = await getListOffers()
-    console.log(offers)
     setOffers(offers)
+  }
+
+  const generateRoadMap = async (id) => {
+    console.log('generateRoadMap')
+    // const roadMap = await getRoadMap(id)
   }
 
   useEffect(() => {
@@ -41,11 +47,14 @@ const ListOffers = () => {
                   <th scope='col' className='px-3 py-3.5 text-left text-md font-semibold text-gray-900'>
                     Salario
                   </th>
+                  <th scope='col' className='px-3 py-3.5 text-left text-md font-semibold text-gray-900'>
+                    Generar Road Map
+                  </th>
                 </tr>
               </thead>
               <tbody className='divide-y divide-gray-200 bg-white'>
                 {offers.map((offer) => (
-                  <tr key={offer.id} className='transition-colors cursor-pointer hover:bg-[#5CA4CD]' onClick={() => { window.open(offer.link, '_blank') }}>
+                  <tr key={offer.id} className='transition-colors cursor-pointer hover:bg-[#8BBEDB]' onClick={() => { window.open(offer.link, '_blank') }}>
                     <td className='whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0'>
                       <div className='pl-5 flex items-center'>
                         <div className='h-11 w-11 flex-shrink-0'>
@@ -78,6 +87,18 @@ const ListOffers = () => {
                             {offer.minSalary} - {offer.maxSalary} {offer.salaryPeriod}
                           </div>)
                         : 'No especifica'}
+                    </td>
+                    <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-900 w-full'>
+                      <button
+                        type='button'
+                        className='h-10 bg-[#167DB7] font-semibold text-white rounded px-3'
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          generateRoadMap(offer.id)
+                        }}
+                      >
+                        Generar
+                      </button>
                     </td>
                   </tr>
                 ))}
