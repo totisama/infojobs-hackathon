@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import getListOffers from '../services/getListOffers'
+import { useNavigate } from 'react-router-dom'
 // import { getRoadMap } from '../services/getRoadMap'
 
 const ListOffers = () => {
+  const navigate = useNavigate()
   const [offers, setOffers] = useState([])
 
   const getOffers = async () => {
@@ -23,7 +25,7 @@ const ListOffers = () => {
     <div className='px-4 sm:px-6 lg:px-8 mt-5 mb-20'>
       <div className='sm:flex sm:items-center'>
         <div className='sm:flex-auto'>
-          <h1 className='text-2xl font-semibold text-gray-900'>Offers</h1>
+          <h1 className='text-2xl font-semibold text-gray-900'>Ofertas</h1>
         </div>
       </div>
       <div className='flow-root'>
@@ -54,7 +56,7 @@ const ListOffers = () => {
               </thead>
               <tbody className='divide-y divide-gray-200 bg-white'>
                 {offers.map((offer) => (
-                  <tr key={offer.id} className='transition-colors cursor-pointer hover:bg-[#8BBEDB]' onClick={() => { window.open(offer.link, '_blank') }}>
+                  <tr key={offer.id} className='transition-colors cursor-pointer hover:bg-[#8BBEDB]' onClick={() => { navigate(`/oferta/${offer.id}`) }}>
                     <td className='whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0'>
                       <div className='pl-5 flex items-center'>
                         <div className='h-11 w-11 flex-shrink-0'>
@@ -83,8 +85,11 @@ const ListOffers = () => {
                     <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-900'>
                       {offer.minSalary
                         ? (
-                          <div className=' text-gray-900'>
-                            {offer.minSalary} - {offer.maxSalary} {offer.salaryPeriod}
+                          <div className=' text-gray-900 flex flex-col'>
+                            {offer.minSalary} - {offer.maxSalary}
+                            <span>
+                              {offer.salaryPeriod}
+                            </span>
                           </div>)
                         : 'No especifica'}
                     </td>
