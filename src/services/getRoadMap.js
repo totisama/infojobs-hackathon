@@ -3,6 +3,7 @@ import {
   ChatCompletionRequestMessageRoleEnum,
   OpenAIApi
 } from 'openai'
+import { TEST_MESSAGE_2 } from '../consts'
 
 const infoJobsToken = import.meta.env.VITE_INFOJOBS_TOKEN
 const openaiToken = import.meta.env.VITE_OPENAI_TOKEN
@@ -14,37 +15,7 @@ const openai = new OpenAIApi(configuration)
 const INITIAL_MESSAGES = [
   {
     role: ChatCompletionRequestMessageRoleEnum.System,
-    content: `Te pasare el nombre de un puesto de trabajo y su descripción, una vez te lo pase, dame una lista de los temas que debería de saber un usuario para poder aplicar al puesto y porque debería de estudiarlo. La lista debería de estar en orden de prioridad.
-
-    El formato de solicitud JSON será el siguiente:
-    {
-      "puesto": [puesto],
-      "descripcion": [descripcion]
-    }
-
-    El formato de respuesta JSON será el siguiente:
-    [
-        {
-          "tema 1": [tema],
-          "mensaje": [mensaje]
-        },
-        {
-          "tema 2": [tema],
-          "mensaje": [mensaje]
-        }
-    ]
-
-    Tienes que cambiar lo que hay entre corchetes por el valor. Por ejemplo:
-    [
-        {
-          "tema 1": "html"
-          "mensaje": "Debes sabes html porque es el lenguaje básico para desarrollar paginas web"
-        },
-        {
-          "tema 2": "css",
-          "mensaje": "Debes saber css porque es una forma importante de controlar el aspecto de las páginas web"
-        }
-    ]`
+    content: TEST_MESSAGE_2
   }
 ]
 
