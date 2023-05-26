@@ -4,8 +4,8 @@ import {
   OpenAIApi
 } from 'openai'
 import { TEST_MESSAGE_2 } from '../consts'
+import { getOfferById } from './getOfferById'
 
-const infoJobsToken = import.meta.env.VITE_INFOJOBS_TOKEN
 const openaiToken = import.meta.env.VITE_OPENAI_TOKEN
 
 const configuration = new Configuration({ apiKey: openaiToken })
@@ -19,21 +19,14 @@ const INITIAL_MESSAGES = [
   }
 ]
 
-const getOfferTitleAndDescriptionById = async (id) => {
-  const res = await fetch(`api/api/7/offer/${id}`, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Basic ${infoJobsToken}`
-    }
-  })
-
-  const { description, title } = await res.json()
-
-  return { description, title }
-}
-
 export const getRoadMap = async (id) => {
-  const { description, title } = await getOfferTitleAndDescriptionById(id)
+  const offer = await getOfferById(id)
+
+  if (offer === '') {
+    throw new Error('Hubo un problema obteniendo la información de la oferta')
+  }
+
+  const { description, title } = offer
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     temperature: 0,
