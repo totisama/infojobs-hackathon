@@ -20,7 +20,13 @@ const INITIAL_MESSAGES = [
 ]
 
 export const getRoadMap = async (id) => {
-  const { description, title } = await getOfferById(id)
+  const offer = await getOfferById(id)
+
+  if (offer === '') {
+    throw new Error('Hubo un problema obteniendo la información de la oferta')
+  }
+
+  const { description, title } = offer
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     temperature: 0,
