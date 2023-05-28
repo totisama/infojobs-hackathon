@@ -12,11 +12,6 @@ const ListOffers = () => {
     setOffers(offers)
   }
 
-  const generateRoadMap = async (id) => {
-    console.log('generateRoadMap')
-    // const roadMap = await getRoadMap(id)
-  }
-
   useEffect(() => {
     getOffers()
   }, [])
@@ -48,9 +43,6 @@ const ListOffers = () => {
                   </th>
                   <th scope='col' className='px-3 py-3.5 text-left text-md font-semibold text-gray-900'>
                     Salario
-                  </th>
-                  <th scope='col' className='px-3 py-3.5 text-left text-md font-semibold text-gray-900'>
-                    Generar Road Map
                   </th>
                 </tr>
               </thead>
@@ -92,18 +84,6 @@ const ListOffers = () => {
                             </span>
                           </div>)
                         : 'No especifica'}
-                    </td>
-                    <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-900 w-full'>
-                      <button
-                        type='button'
-                        className='h-10 bg-[#167DB7] font-semibold text-white rounded px-3'
-                        onClick={(event) => {
-                          event.stopPropagation()
-                          generateRoadMap(offer.id)
-                        }}
-                      >
-                        Generar
-                      </button>
                     </td>
                   </tr>
                 ))}
