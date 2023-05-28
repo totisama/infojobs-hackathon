@@ -1,0 +1,15 @@
+.roadmap-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 40px 0;
+}
+
+.roadmap-container::after {
+  background-color: #e17b77;
+  content: '';
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}

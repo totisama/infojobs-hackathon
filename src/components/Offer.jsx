@@ -120,7 +120,7 @@ const Offer = () => {
           </div>
         </div>
       </div>
-      <div className='mt-1 bg-white w-4/12 p-5 rounded-lg lg:w-3/5'>
+      <div className='mt-1 bg-white w-4/5 p-5 rounded-lg lg:w-3/5'>
         <h1 className='text-2xl font-semibold'>Requisitos</h1>
         <ul
           role='list'
@@ -196,7 +196,7 @@ const Offer = () => {
           : null}
       </div>
       {open
-        ? <RoadMapModal open={open} setOpen={setOpen} />
+        ? <RoadMapModal open={open} setOpen={setOpen} name={offer.title} />
         : null}
     </div>
   )
