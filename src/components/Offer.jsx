@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOfferById } from '../services/getOfferById'
+import RoadMapModal from './RoadMapModal'
 
 const Offer = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [offer, setOffer] = useState({})
+  const [open, setOpen] = useState(false)
 
   const getOffer = useCallback(async () => {
     const oferta = await getOfferById(id)
@@ -103,8 +105,8 @@ const Offer = () => {
               </ul>
             </div>
           </div>
-          <div className='flex flex-col items-center mt-5 gap-3 lg:items-end lg:mt-0 lg:w-1/3'>
-            <button className='text-white text-sm uppercase w-2/3 bg-[#00A550] p-2.5 rounded-[4px] lg:w-4/5 hover:bg-[#00994a]'>
+          <div className='flex flex-col items-start mt-5 gap-3 lg:items-end lg:mt-0 lg:w-1/3'>
+            <button onClick={() => setOpen(true)} className='text-white text-sm uppercase w-2/3 bg-[#00A550] p-2.5 rounded-[4px] lg:w-4/5 hover:bg-[#00994a]'>
               Generar roadmap técnico
             </button>
             <a
@@ -146,8 +148,8 @@ const Offer = () => {
                   role='list'
                   className='list-none list-outside text-md text-[#797A7A]'
                 >
-                  {offer.languages.map((language) => (
-                    <li key='3' className='text-black'>
+                  {offer.languages.map((language, index) => (
+                    <li key={index} className='text-black'>
                       <span className='text-md font-light'>{language.name} - {language.level}</span>
                     </li>
                   ))}
@@ -193,6 +195,9 @@ const Offer = () => {
             </div>)
           : null}
       </div>
+      {open
+        ? <RoadMapModal open={open} setOpen={setOpen} />
+        : null}
     </div>
   )
 }
