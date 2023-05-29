@@ -44,7 +44,6 @@ When you search for any position in Infojobs projects, you can now check if you 
 Some points on this README:
 - Expected Behavior and ideas
 - Figma Design for the solution
-- Video demo
 - Tools and more
 
 
