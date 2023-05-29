@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="https://midu.dev/logo.png" alt="UkronTadd" width="664"> 
+  <img src="https://midu.dev/logo.png" width="664"> 
 <br>
 <br>
   <img src="//media.infojobs.net/portales/ij/appgrade/svgs/ij-logo-default_primary.svg" alt="UkronTadd" width="664"> 
@@ -11,12 +11,6 @@ Midudev - Infojobs Hackaton
 <br>
 Our idea: Technical developer Roadmap with ChatGPT
 </h1>
-<p align="center">
-  
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/static/v1?label=License&message=NoLicense&color=<COLOR>" alt="No license">
-  </a>
-</p>
 
 <p align="center">Midudev Hackaton</p>
 <p align="center">Rodrigo Samayoa (España) y Alejandro Tejada (Guatemala) </p>
