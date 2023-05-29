@@ -118,12 +118,15 @@ const RoadMapModal = ({ open, setOpen, name, id }) => {
                       <div className='h-full mx-5'>
                         <div className='mt-3 sm:mt-5'>
                           <h2 className='text-xl leading-6 text-gray-900'>
-                            Selecciona tus habilidades técnicas (5 como máximo)
+                            Selecciona tus habilidades técnicas o blandas (5 como máximo)
                           </h2>
                         </div>
                         <div className='mt-2'>
                           <div className='h-40'>
-                            <input type='text' value={searchValue} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/5 p-2.5 focus:outline-[#167DB7]' onChange={(e) => searchSkills(e)} />
+                            <div className='flex gap-2'>
+                              <input type='text' value={searchValue} className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-4/5 p-2.5 focus:outline-[#167DB7]' onChange={(e) => searchSkills(e)} />
+                              <button className='bg-[#00A550] p-3 rounded-lg text-white' onClick={() => selectSkill(searchValue)}>Agregar</button>
+                            </div>
                             {foundSkills.length > 0 && searchValue.length > 2
                               ? (
                                 <ul className='bg-[#167DB7] text-white w-3/5 rounded-lg p-2 max-h-52 overflow-y-auto mt-1 relative z-10'>
