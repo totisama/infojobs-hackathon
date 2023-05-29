@@ -19,7 +19,7 @@ const INITIAL_MESSAGES = [
   }
 ]
 
-export const getRoadMap = async (id) => {
+export const getRoadMap = async (id, skills) => {
   const offer = await getOfferById(id)
 
   if (offer === '') {
@@ -36,7 +36,8 @@ export const getRoadMap = async (id) => {
         role: ChatCompletionRequestMessageRoleEnum.User,
         content: JSON.stringify({
           puesto: title,
-          descripcion: description
+          descripcion: description,
+          habilidades: [...skills]
         })
       }
     ]

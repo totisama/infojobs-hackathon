@@ -11,7 +11,6 @@ const Offer = () => {
 
   const getOffer = useCallback(async () => {
     const oferta = await getOfferById(id)
-    console.log(oferta)
 
     if (oferta === '') {
       navigate('/')
@@ -78,14 +77,17 @@ const Offer = () => {
                   {offer.city}
                 </li>
                 <li key='2'>
-                  Publicada hace {getPostedAgo(offer.creationDate)}
+                  Publicada hace {getPostedAgo(offer.updateDate)}
                 </li>
                 <li key='3'>
                   {offer.salaryDescription}
                 </li>
-                <li key='4'>
-                  {offer.teleworking?.value}
-                </li>
+                {offer.teleworking && offer.teleworking.id !== 0
+                  ? (
+                    <li key='4'>
+                      {offer.teleworking.value}
+                    </li>)
+                  : null}
               </ul>
             </div>
             <div className='mt-2 lg:mt-0'>
@@ -196,7 +198,7 @@ const Offer = () => {
           : null}
       </div>
       {open
-        ? <RoadMapModal open={open} setOpen={setOpen} name={offer.title} />
+        ? <RoadMapModal open={open} setOpen={setOpen} name={offer.title} id={id} />
         : null}
     </div>
   )
