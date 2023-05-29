@@ -89,14 +89,9 @@ With the contribution of Infojobs we had access to their designs. So, we created
 <br>
 <br>
 
-## Step 3: You enter any other comments to make chatGPT more accurate. Then you click GENERAR ROADMAP.
-![Step 3](readmeAssets/Step3.png)
 
-<br>
-<br>
-
-## Step 4: Enjoy your Roadmap
-![Step 4](readmeAssets/Step4.png)
+## Step 3: Enjoy your Roadmap
+![Step 3](readmeAssets/Step4.png)
 
 ## Credits and contact
 
@@ -113,4 +108,4 @@ With the contribution of Infojobs we had access to their designs. So, we created
 
 ## Licence
 
-Under our developer licence
+The MIT License (MIT)
