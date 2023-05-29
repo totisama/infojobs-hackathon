@@ -12,11 +12,6 @@ const ListOffers = () => {
     setOffers(offers)
   }
 
-  const generateRoadMap = async (id) => {
-    console.log('generateRoadMap')
-    // const roadMap = await getRoadMap(id)
-  }
-
   useEffect(() => {
     getOffers()
   }, [])
@@ -49,15 +44,12 @@ const ListOffers = () => {
                   <th scope='col' className='px-3 py-3.5 text-left text-md font-semibold text-gray-900'>
                     Salario
                   </th>
-                  <th scope='col' className='px-3 py-3.5 text-left text-md font-semibold text-gray-900'>
-                    Generar Road Map
-                  </th>
                 </tr>
               </thead>
               <tbody className='divide-y divide-gray-200 bg-white'>
                 {offers.map((offer) => (
                   <tr key={offer.id} className='transition-colors cursor-pointer hover:bg-[#8BBEDB]' onClick={() => { navigate(`/oferta/${offer.id}`) }}>
-                    <td className='whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0'>
+                    <td className='whitespace-nowrap py-5 pl-4 pr-3 text-sm sm:pl-0 max-w-sm truncate'>
                       <div className='pl-5 flex items-center'>
                         <div className='h-11 w-11 flex-shrink-0'>
                           <img className='h-11 w-11 rounded-full' src={offer.logo} alt='' />
@@ -70,7 +62,7 @@ const ListOffers = () => {
                         </div>
                       </div>
                     </td>
-                    <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-500'>
+                    <td className='whitespace-nowrap px-3 py-5 text-sm font-semibold max-w-md truncate text-gray-500'>
                       <div className='text-gray-900'>{offer.title}</div>
                     </td>
                     <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-500'>
@@ -92,18 +84,6 @@ const ListOffers = () => {
                             </span>
                           </div>)
                         : 'No especifica'}
-                    </td>
-                    <td className='whitespace-nowrap px-3 py-5 text-sm text-gray-900 w-full'>
-                      <button
-                        type='button'
-                        className='h-10 bg-[#167DB7] font-semibold text-white rounded px-3'
-                        onClick={(event) => {
-                          event.stopPropagation()
-                          generateRoadMap(offer.id)
-                        }}
-                      >
-                        Generar
-                      </button>
                     </td>
                   </tr>
                 ))}

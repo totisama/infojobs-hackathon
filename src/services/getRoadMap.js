@@ -3,7 +3,7 @@ import {
   ChatCompletionRequestMessageRoleEnum,
   OpenAIApi
 } from 'openai'
-import { TEST_MESSAGE_2 } from '../consts'
+import { INITIAL_MESSAGE } from '../consts'
 import { getOfferById } from './getOfferById'
 
 const openaiToken = import.meta.env.VITE_OPENAI_TOKEN
@@ -15,11 +15,11 @@ const openai = new OpenAIApi(configuration)
 const INITIAL_MESSAGES = [
   {
     role: ChatCompletionRequestMessageRoleEnum.System,
-    content: TEST_MESSAGE_2
+    content: INITIAL_MESSAGE
   }
 ]
 
-export const getRoadMap = async (id) => {
+export const getRoadMap = async (id, skills) => {
   const offer = await getOfferById(id)
 
   if (offer === '') {
@@ -36,7 +36,8 @@ export const getRoadMap = async (id) => {
         role: ChatCompletionRequestMessageRoleEnum.User,
         content: JSON.stringify({
           puesto: title,
-          descripcion: description
+          descripcion: description,
+          habilidades: [...skills]
         })
       }
     ]

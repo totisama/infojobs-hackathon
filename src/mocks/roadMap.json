@@ -1,38 +1,38 @@
 [
   {
-    "tema 1": "Instalación de sistemas CCTV",
+    "tema": "Instalación de sistemas CCTV",
     "mensaje": "Es importante que el usuario tenga conocimientos sólidos en la instalación de sistemas CCTV, ya que es el principal servicio que se ofrece en el puesto de trabajo."
   },
   {
-    "tema 2": "Instalación de redes",
+    "tema": "Instalación de redes",
     "mensaje": "El usuario debe tener conocimientos en la instalación de redes, ya que es una parte importante del trabajo y se instalan diferentes tipos de redes, como wifi, fibra óptica, etc."
   },
   {
-    "tema 3": "Conocimientos básicos de electricidad",
+    "tema": "Conocimientos básicos de electricidad",
     "mensaje": "Es importante que el usuario tenga conocimientos básicos de electricidad, ya que es necesario para la instalación de los sistemas CCTV y redes."
   },
   {
-    "tema 4": "Habilidad con herramientas",
+    "tema": "Habilidad con herramientas",
     "mensaje": "El usuario debe tener habilidad con las herramientas, ya que es necesario para la instalación de los sistemas CCTV y redes."
   },
   {
-    "tema 5": "Configuración de redes wifi",
+    "tema": "Configuración de redes wifi",
     "mensaje": "Es muy valorable que el usuario tenga conocimientos en la configuración de redes wifi, ya que es un servicio que se ofrece en el puesto de trabajo."
   },
   {
-    "tema 6": "Conocimiento de Ubiquiti y Aruba",
+    "tema": "Conocimiento de Ubiquiti y Aruba",
     "mensaje": "Es muy valorable que el usuario tenga conocimientos en Ubiquiti y Aruba, ya que son marcas de equipos de redes que se utilizan en el puesto de trabajo."
   },
   {
-    "tema 7": "Configuración de cámaras IP",
+    "tema": "Configuración de cámaras IP",
     "mensaje": "Es muy valorable que el usuario tenga conocimientos en la configuración de cámaras IP, ya que es un servicio que se ofrece en el puesto de trabajo."
   },
   {
-    "tema 8": "Experiencia previa",
+    "tema": "Experiencia previa",
     "mensaje": "Es imprescindible que el usuario tenga experiencia previa en el puesto de trabajo."
   },
   {
-    "tema 9": "Carnet de conducir B",
+    "tema": "Carnet de conducir B",
     "mensaje": "Es imprescindible que el usuario tenga carnet de conducir B, ya que es necesario para desplazarse a los lugares de trabajo."
   }
 ]
