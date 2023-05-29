@@ -6,11 +6,11 @@ const RoadMap = ({ name, roadmap }) => {
   return (
     <div className='p-3 mt-1'>
       <div className='flex justify-center'>
-        <h2 className='text-3xl leading-6 text-gray-900 font-semibold'>
+        <h2 className='text-3xl leading-6 text-gray-900 font-semibold truncate'>
           {name}
         </h2>
       </div>
-      <div className='h-[400px] overflow-y-auto mt-5'>
+      <div className='h-[300px] overflow-y-auto mt-5'>
         <div className='roadmap-container'>
           {roadmap.map((data, idx) => (
             <RoadMapItem key={idx} data={data} />
