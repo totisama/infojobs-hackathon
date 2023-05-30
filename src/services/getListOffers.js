@@ -1,7 +1,7 @@
 const token = import.meta.env.VITE_INFOJOBS_TOKEN
 
 const getListOffers = async () => {
-  const response = await fetch('/api/api/9/offer?category=informatica-telecomunicaciones', {
+  const response = await fetch('/api/9/offer?category=informatica-telecomunicaciones', {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Basic ${token}`

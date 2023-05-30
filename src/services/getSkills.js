@@ -1,7 +1,7 @@
 const token = import.meta.env.VITE_INFOJOBS_TOKEN
 
 const getSkills = async () => {
-  const response = await fetch('/api/api/1/dictionary/type/skills', {
+  const response = await fetch('/api/1/dictionary/type/skills', {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Basic ${token}`
