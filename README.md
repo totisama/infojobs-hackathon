@@ -32,6 +32,18 @@ Some points on this README:
 - Figma Design for the solution
 - Tools and more
 
+# Installation
+
+- Clone repository
+  `git clone https://github.com/totisama/infojobs-hackathon`
+- Copy the .env.example file to a new .env, and fill in the values for the VITE_INFOJOBS_TOKEN and VITE_OPENAI_TOKEN variables with your tokens.
+- Run the following commands
+  ```
+  cd infojobs-hackathon
+  npm install
+  npm run dev
+  ```
+
 # Description of the tools and libraries that we used
 
 - React.js
