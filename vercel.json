@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match",
+      "destination": "https://api.infojobs.net/:match"
+    },
+    {
+      "source": "/oferta/api/:match",
+      "destination": "https://api.infojobs.net/:match"
+    }
+  ]
+}
