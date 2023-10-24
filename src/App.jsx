@@ -10,7 +10,7 @@ function App () {
     <>
       <header className='flex flex-col items-center pt-10 pb-5 cursor-pointer' onClick={() => navigate('/')}>
         <Logo size='large' />
-        <h1 className='font-semibold tracking-wider text-2xl'>Road Map Generator</h1>
+        <h1 className='font-semibold tracking-wider text-2xl'>Roadmap Generator</h1>
       </header>
       <main>
         <Routes>
